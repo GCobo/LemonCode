@@ -1,5 +1,5 @@
-import { printClientsAccounts } from './client-list-business.js'
+const clientsAccounts = require('./client-list-business')
 
 window.onload = function () {
-  printClientsAccounts()
+  clientsAccounts.printClientsAccounts()
 }

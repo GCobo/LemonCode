@@ -1,13 +1,15 @@
-import { getClientElement } from './client-business.js'
-import { getClients } from './data-business.js'
+const clientElement = require('./client-business')
+const clientsData = require('./data-business')
 
-export function printClientsAccounts() {
-  const clients = getClients()
+function printClientsAccounts() {
+  const clients = clientsData.getClients()
   const ul = document.createElement('ul')
   for (let client of clients) {
-    const element = getClientElement(client)
+    const element = clientElement.getClientElement(client)
     ul.appendChild(element)
   }
 
   document.getElementById('root').appendChild(ul)
 }
+
+module.exports = { printClientsAccounts }

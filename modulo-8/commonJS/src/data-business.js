@@ -1,4 +1,4 @@
-export function getClients() {
+function getClients() {
   return [
     {
       id: 1,
@@ -77,7 +77,7 @@ export function getClients() {
   ]
 }
 
-export function getAccounts() {
+function getAccounts() {
   return [
     {
       id: 1,
@@ -171,3 +171,4 @@ export function getAccounts() {
     },
   ]
 }
+module.exports = { getClients, getAccounts }

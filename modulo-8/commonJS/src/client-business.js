@@ -1,8 +1,8 @@
-import { getClientAccountsElement } from './account-business.js'
-import { getAccounts } from './data-business.js'
+const clients = require('./account-business')
+const accounts = require('./data-business')
 
-export function getClientElement(client) {
-  const allAccounts = getAccounts()
+function getClientElement(client) {
+  const allAccounts = accounts.getAccounts()
   const clientAccounts = []
   for (let account of allAccounts) {
     if (account.clientId === client.id) {
@@ -11,7 +11,7 @@ export function getClientElement(client) {
   }
 
   const node = getClientNode(client)
-  const ul = getClientAccountsElement(clientAccounts)
+  const ul = clients.getClientAccountsElement(clientAccounts)
 
   node.appendChild(ul)
 
@@ -28,3 +28,5 @@ function getClientNode(client) {
 function getFullName(client) {
   return client.first_name + ' ' + client.last_name
 }
+
+module.exports = { getClientElement }
