@@ -8,7 +8,7 @@ export function getClientAccountsElement(accounts) {
   return ul
 }
 
-export function getAccountElement(account) {
+function getAccountElement(account) {
   const li = document.createElement('li')
 
   li.style = getNodeStyle(account)

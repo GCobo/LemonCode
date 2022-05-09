@@ -18,13 +18,13 @@ export function getClientElement(client) {
   return node
 }
 
-export function getClientNode(client) {
+function getClientNode(client) {
   const li = document.createElement('li')
   li.append(getFullName(client))
 
   return li
 }
 
-export function getFullName(client) {
+function getFullName(client) {
   return client.first_name + ' ' + client.last_name
 }
