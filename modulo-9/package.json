@@ -1,0 +1,17 @@
+{
+  "name": "modulo-9",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "2.5.0",
+    "axios": "0.27.2"
+  }
+}
