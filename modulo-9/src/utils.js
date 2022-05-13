@@ -5,6 +5,7 @@ const createCharacterRow = (character) => {
   const link = createRowText(character)
   element.appendChild(link)
   element.className = 'character-row'
+  element.id = character.char_id
   return element
 }
 
