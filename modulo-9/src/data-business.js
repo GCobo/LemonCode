@@ -7,6 +7,8 @@ export const getCharacters = () => {
     .then((response) => {
       const getRoot = document.getElementById('root')
 
+      getRoot.innerHTML = ''
+
       response.data.map((item) => {
         getRoot.append(createCharacterRow(item))
         const getElementById = document.getElementById(item.char_id)
