@@ -1,9 +1,14 @@
 import axios from 'axios'
+import { createCharacterRow } from './utils.js'
 
-export const callApi = () => {
+export const getCharacters = () => {
   axios
     .get('https://www.breakingbadapi.com/api/characters')
-    .then((response) => response.data)
-    .then((data) => data)
+    .then((response) => {
+      const getRoot = document.getElementById('root')
+      for (let item of response.data) {
+        getRoot.append(createCharacterRow(item))
+      }
+    })
     .catch((error) => console.log('Se ha producido un error'))
 }
