@@ -1,8 +1,9 @@
 import axios from 'axios'
+import '../index.css'
 import { createCard } from './utils.js'
 
 let url = 'https://rickandmortyapi.com/api/character'
-let count = 2
+let count = 826
 const getList = document.querySelector('ul')
 
 const getCountCharacter = () => {
@@ -15,10 +16,10 @@ const getCountCharacter = () => {
   return count
 }
 
-// 826
+const divideCount = [...Array(count).keys()]
 
 const getCharacter = () => {
-  axios.get(`${url}/[1,${getCountCharacter()}]`).then((response) => {
+  axios.get(`${url}/${divideCount}`).then((response) => {
     response.data.map((item) => {
       getList.append(createCard(item))
     })
