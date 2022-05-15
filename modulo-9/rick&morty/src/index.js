@@ -3,7 +3,7 @@ import '../index.css'
 import { createCard } from './utils.js'
 
 let url = 'https://rickandmortyapi.com/api/character'
-let count = 826
+let count = 10
 const getList = document.querySelector('ul')
 
 const getCountCharacter = () => {
@@ -27,7 +27,3 @@ const getCharacter = () => {
 }
 
 getCharacter()
-
-// hacer una llamada y ver los personajes totales
-// guardar el valor de personajes totales
-// hacer una llamada con todos los personajes y crear un listado
