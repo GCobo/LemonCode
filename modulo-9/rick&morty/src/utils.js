@@ -18,3 +18,12 @@ const createRowText = (character) => {
   element.append(character.name)
   return element
 }
+
+export const createPagination = (value) => {
+  const element = document.createElement('li')
+  const button = document.createElement('button')
+  button.id = `page-${value}`
+  element.append(button)
+  button.innerText = value
+  return element
+}
