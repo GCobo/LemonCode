@@ -16,10 +16,14 @@ const getCharacters = async (url) => {
 export const createPage = async () => {
   const promise = await axios.get(url)
   pages = promise.data.info.pages
+  getCharacters(`${url}`)
+
   for (let i = 0; i < pages; i++) {
     getPagination.append(createPagination(i + 1))
     const getButton = document.getElementById(`page-${i + 1}`)
     getButton.addEventListener('click', () => {
+      getList.innerHTML = ''
+
       getCharacters(`${url}?page=${i + 1}`)
     })
   }
