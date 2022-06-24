@@ -30,3 +30,4 @@ export const createPage = async () => {
 }
 
 // añadir detalle de cada personaje llamando a otro endpoint
+

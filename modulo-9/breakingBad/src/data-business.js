@@ -1,23 +1,23 @@
-import axios from 'axios'
-import { createCharacterRow, showCharacter } from './utils.js'
+import { createCharacterRow, showCharacter } from "./utils.js";
 
-export const getCharacters = () => {
-  axios
-    .get('https://www.breakingbadapi.com/api/characters')
-    .then((response) => {
-      const getRoot = document.getElementById('root')
+export const getCharacters = async () => {
+  const root = document.getElementById("root");
 
-      getRoot.innerHTML = ''
+  try {
+    const response = await fetch(
+      "https://www.breakingbadapi.com/api/characters"
+    );
+    const data = await response.json();
+    root.innerHTML = "";
+    data.map((item) => {
+      root.appendChild(createCharacterRow(item));
+      const getElementById = document.getElementById(item.char_id);
 
-      response.data.map((item) => {
-        getRoot.append(createCharacterRow(item))
-        const getElementById = document.getElementById(item.char_id)
-        getElementById.addEventListener('click', () => {
-          showCharacter(item)
-        })
-      })
-    })
-    .catch((error) => console.log('Se ha producido un error'))
-}
-
-// crear una función getCharacterId y retornar algún dato más
+      getElementById.addEventListener("click", () => {
+        showCharacter(item);
+      });
+    });
+  } catch {
+    root.innerHTML = "There was an error";
+  }
+};
