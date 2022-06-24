@@ -8,14 +8,14 @@ let pages
 let data = []
 
 const getCharacters = async (url) => {
-  const promise = await axios.get(url)
-  data = promise.data.results
+  const response = await axios.get(url)
+  data = response.data.results
   data.map((item) => getList.append(createCard(item)))
 }
 
 export const createPage = async () => {
-  const promise = await axios.get(url)
-  pages = promise.data.info.pages
+  const response = await axios.get(url)
+  pages = response.data.info.pages
   getCharacters(`${url}`)
 
   for (let i = 0; i < pages; i++) {
@@ -28,3 +28,5 @@ export const createPage = async () => {
     })
   }
 }
+
+// añadir detalle de cada personaje llamando a otro endpoint

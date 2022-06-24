@@ -19,3 +19,5 @@ export const getCharacters = () => {
     })
     .catch((error) => console.log('Se ha producido un error'))
 }
+
+// crear una función getCharacterId y retornar algún dato más
