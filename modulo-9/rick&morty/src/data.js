@@ -36,5 +36,3 @@ export const createPage = async () => {
     pagination.innerHTML = "There was an error";
   }
 };
-
-// añadir detalle de cada personaje llamando a otro endpoint
